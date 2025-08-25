@@ -1,4 +1,3 @@
-# def/src/data/split_multilabel.py
 # Crea splits train/val/test estratificados para multilabel.
 # - Usa iterstrat si está disponible
 # - Fallback robusto con train_test_split y una clave estratificada simple

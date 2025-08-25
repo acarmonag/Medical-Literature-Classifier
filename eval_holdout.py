@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import f1_score, precision_recall_fscore_support
 from src.infer.predictor import MedicalPredictor
+from sklearn.metrics import f1_score
 
 def binarize(sets, labels):
     return np.array([[1 if l in s else 0 for l in labels] for s in sets], dtype=int)
@@ -30,6 +31,7 @@ def main(args):
     y_pred = binarize(y_pred_sets, labels)
 
     print("\n=== MÉTRICAS GLOBALES (HOLD-OUT) ===")
+    print(f"weighted_f1: {f1_score(y_true, y_pred, average='weighted', zero_division=0):.4f}")
     print(f"macro_f1: {f1_score(y_true, y_pred, average='macro', zero_division=0):.4f}")
 
     p, r, f1, _ = precision_recall_fscore_support(y_true, y_pred, average=None, zero_division=0)
