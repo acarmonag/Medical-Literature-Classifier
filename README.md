@@ -31,6 +31,17 @@ outputs/
    │   ├─ thresholds.npy
    │   └─ labels.json
 ```
+## Uso
+
+Para utilizar esta solución, se debe:
+- Clonar el repositorio:
+```powershell
+git clone 
+```
+- En la carpeta donde se clonó el repositorio, abrir un cmd y ejecutar
+```bash
+streamlit run app.py
+```
 
 ## Requisitos
 
@@ -49,22 +60,6 @@ Instalación (Windows PowerShell):
 ```powershell
 python -m venv .venv; .\.venv\Scripts\Activate.ps1; pip install -r requirements.txt
 ```
-
-## Descargar / usar PubMedBERT localmente
-
-Para descargar el encoder Hugging Face y guardarlo localmente:
-
-```python
-from transformers import AutoModel, AutoTokenizer
-model_name = "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract"
-save_dir = "src/model/local_pubmedbert"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModel.from_pretrained(model_name)
-tokenizer.save_pretrained(save_dir)
-model.save_pretrained(save_dir)
-```
-
-Luego apunta `--encoder src/model/local_pubmedbert` en los scripts de entrenamiento/inferencia.
 
 ## Comandos principales
 
