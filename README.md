@@ -34,14 +34,36 @@ outputs/
 ## Uso
 
 Para utilizar esta solución, se debe:
-- Clonar el repositorio:
+- Clonar el repositorio (tomará cierto tiempo):
 ```powershell
-git clone 
+git clone https://github.com/acarmonag/Medical-Literature-Classifier
 ```
-- En la carpeta donde se clonó el repositorio, abrir un cmd y ejecutar
+- Al terminar el clone, abrir un terminal dentro de la carpeta Medical-Literature-Classifier y ejecutar estas líneas
+```powershell
+git lfs install
+```
+```powershell
+git lfs pull
+```
+- Ahora, se deben instalar las dependencias: Unix/macOS:
+```bash
+python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
+```
+- O en Windows:
+```powershell
+python -m venv .venv; .\.venv\Scripts\Activate.ps1; pip install -r requirements.txt
+```
+- En la carpeta Medical-Literature-Classifier, abrir una terminal y ejecutar:
 ```bash
 streamlit run app.py
 ```
+- Si al ejecutar el comando anterior la terminal solicita un email, solo es necesario darle enter.
+
+## Disclaimers de la UI (IMPORTANTE)
+- Lo anterior, debería abrir una interfaz de usuario donde se puede cargar un archivo csv con diferentes artículos, o un simple artículo con título y abstract, al llenar los campos necesarios, el programa ejecutará automáticamente la clasificación.
+- Si se sube un archivo csv, el programa iniciará la clasificación de manera inmediata. NO ES NECESARIO PRESIONAR EL BOTÓN PREDECIR.
+- Al terminar la clasificación por .csv, parecerá que se hubiera recargado, pero solo se tiene que volver a la opción predicción por CSV + Métricas.
+- !!! Si sale un error al momento de ejecutar la UI, por favor descargar el output.zip, eliminar la carpeta output y reemplzarla con el contenido del .zip. (Poco probable)
 
 ## Requisitos
 
