@@ -19,6 +19,7 @@ app.py                  # Streamlit UI
 src/                    # Código fuente (data, model, infer, train, eval, utils)
 data/                   # Ejemplos de CSV / splits
 outputs/                # Carpeta por corrida con artefactos (final_model.pt, thresholds.npy, labels.json)
+documents/              # Carpeta con informe final y diagrama de la solución
 ```
 
 Modelo — ejemplo de outputs por corrida:
